@@ -19,20 +19,19 @@ Explanation:
 here the maximum digit size is 4 --> 1024 (had 4 digits)
 Now return the answer which is 1024
 """
-
-import unittest
-
-
-
 def add_maxdigit(nums):
-  ans = []
-  # write your code here
-  
-  return sum(ans)
+    ans=[]
+    x=max(nums)
+    y=len(str(x))
+    for i in nums:
+        if y==len(str(i)):
+            ans.append(int(i))
+    return sum(ans)
+
 
 
 # DO NOT TOUCH THE BELOW CODE
-
+import unittest
 class TestAddMaxDigit(unittest.TestCase):
 
     def test_01(self):
