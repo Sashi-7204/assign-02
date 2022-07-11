@@ -1,47 +1,76 @@
-# Concept : Dictionaries
-# concat dictionaries
 '''
-You will be given three dictionaries, representing three sections -- containing rollnumber and corresponding Names
+Exited to do the first assignment.
 
-B1 = {"110065001": "Ram", "110065002" : "Lakshman"}
-B2 = {"120065001": "Bharat", "120065002" : "Satrugna"}
-B3 = {"130065001": "Dhasaradh", "130065002" : "Babu"}
+This assignment is a simple one to make you ready for the followup assignments.
 
-Each dictionary representing a particular section.
+As a University, students details plays an important role. Instead of one person writing all your details, we intend to take it from you.
 
-Now if we want to get all the students from the branch CSE, you have to mix all dictionaries and present a single Dictionary with all the roll numbers and students.
+The Details are as follows:
 
-Your task is to combine the given dictionaries into cse_dict and return the cse_dict
+Name:
+Roll Number:
+Branch:
+Specialization:
+Email ID:
+Moodle ID:
+GitHub ID:
+Replit ID:
+Semester:
+Year(1-4):
 
-Take a hint to use update() function
+Now your task is to put it in a dictionary like the below example
+
+{
+'name': {'first-name':'Rama', 'last-name':'Rao'},
+'roll-number':'123456',
+'branch':'CSE',
+'specialization':'DS',
+'email-id':'ramarao@gitam.in',
+'moodle-id':'Rama Rao 123456',
+'github-id':'ramarao',
+'replit-id':'ramarao',
+'semester':'2',
+'year':'1'
+}
+
+In the above example we have a dictionary in a dictionary with `first-name` and `last-name` as the keys, It is must.
+
+Now you are given the function like the below. Fill this function with the necessary code.
+
+This function has to fill in the dictionary with the acquired input and return to the function caller which inturn will print the received dictionary.
+
+This function has to return a dictionary with all your details.
+Make sure you fill in the right details.
+
 '''
-import unittest
 
-def concatinate_dictionaries(d1,d2):
-  cse_dict = {}
-  # write your code here
+def my_details():
+ x=input('Enter the name of the dict: ')
+d={}
+n=int(input("Enter the number of inputs in the dict: "))
+for j in range(n):
+  d[x]={}
+  for i in range(0,2):
+    key=input("Enter the key name: ")
+    value=input("Enter the value: ")
+  d[x].update({key:value})
+  d.update({'Roll num':'66'})
+  d.update({'Branch':'ECE'})
+  d.update({'Specialization':'AIML'})
+  d.update({'Email-Id':'skarunak@@gitam.in'})
+  d.update({'Replit-Id':'SAI-SASHANK'})
+  d.update({'GitHub-Id':'Sashi-7204'})
+  d.update({'Moodle-Id':'VU2iEECE0100066'})
+  d.update({'Semester':'2'})
+  d.update({'Year':'1'})
+    return d
 
-  return cse_dict
+
+# now call your function
+dt = my_details()
+print(dt)
 
 
-# DO NOT TOUCH THE BELOW CODE
-
-class Concatination(unittest.TestCase):
-  def test_01(self):
-    B1 = {"110065001": "Ram", "110065002" : "Lakshman"}
-    B2 = {"120065001": "Bharat", "120065002" : "Satrugna"}
-    B3 = {"130065001": "Dhasaradh", "130065002" : "Babu"}
-    output = {"110065001": "Ram", "110065002" : "Lakshman", "120065001": "Bharat", "120065002" : "Satrugna", "130065001": "Dhasaradh", "130065002" : "Babu"}
-    
-    self.assertEqual(concatinate_dictionaries(B1,B2,B3), output)
-
-  def test_02(self):
-    B1 = {"110065001": "shyam", "110065002" : "sundar"}
-    B2 = {"120065001": "satyam", "120065002" : "sivam"}
-    B3 = {"130065001": "ved", "130065002" : "stalon"}
-    output = {"110065001": "shyam", "110065002" : "sundar", "120065001": "satyam", "120065002" : "sivam", "130065001": "ved", "130065002" : "stalon"}
-    
-    self.assertEqual(concatinate_dictionaries(B1,B2,B3), output)
-
-if __name__ == '__main__':
-  unittest.main(verbosity=2)
+# Once you complete, no need to submit.
+# The changes will be automatically saved.
+# Wish you happy coding!!!=
